@@ -1,12 +1,12 @@
 "use client";
+import { urlFor } from "@/sanity";
+import { Project } from "@/typings";
 import { motion } from "framer-motion";
 import React from "react";
 
-type Props = {};
+type Props = { projects: Project[] };
 
-const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
+const Projects = ({ projects }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,7 +19,7 @@ const Projects = (props: Props) => {
       </h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             key={i}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
@@ -29,7 +29,7 @@ const Projects = (props: Props) => {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="https://picsum.photos/200/300"
+              src={urlFor(project?.image).url()}
               alt=""
             />
 
@@ -38,15 +38,23 @@ const Projects = (props: Props) => {
                 <span className="underline decoration-[#F7AB0A]">
                   Case study {i + 1} of {projects.length}:
                 </span>{" "}
-                Lorem ipsum dolor sit
+                {project.title}
               </h4>
 
+              {project?.technologies?.length > 0 && (
+                <div className="flex items-center space-x-2 justify-center">
+                  {project.technologies.map((technology) => (
+                    <img
+                      key={technology._id}
+                      className="h-10 w-10 rounded-full"
+                      src={urlFor(technology.image).url()}
+                    />
+                  ))}
+                </div>
+              )}
+
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                voluptatibus, doloribus, quibusdam, quos voluptates
-                exercitationem quod voluptate quae dolorum natus consequuntur?
-                Quisquam, voluptates. Quisquam, voluptates. Quisquam,
-                voluptates. Quisquam, voluptates. Quisquam,
+                {project.summary}
               </p>
             </div>
           </div>

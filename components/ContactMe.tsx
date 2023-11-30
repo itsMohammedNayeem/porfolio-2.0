@@ -1,10 +1,11 @@
 "use client";
+import { PageInfo } from "@/typings";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 type Inputs = {
   name: string;
   email: string;
@@ -12,18 +13,11 @@ type Inputs = {
   message: string;
 };
 
-const ContactMe = (props: Props) => {
+const ContactMe = ({ pageInfo }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href =
-      `mailto:nayeem.gmit@gmail.com` +
-      `?subject=` +
-      formData.subject +
-      `&body=Hi, my name is ${formData.name}. ` +
-      formData.message +
-      ` ` +
-      `My email is ${formData.email}.`;
+    window.location.href = `mailto:${pageInfo.email}?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message}`;
   };
 
   return (
@@ -46,17 +40,19 @@ const ContactMe = (props: Props) => {
         <div className="space-y-10">
           <div className="flex items-center justify-center space-x-5">
             <PhoneIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-            <p className="text-2xl">+91 9876543210</p>
+            <p className="text-2xl">{pageInfo.phoneNumber}</p>
           </div>
 
           <div className="flex items-center justify-center space-x-5">
             <EnvelopeIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-            <p className="text-2xl">nayeem.gmit@gmail.com</p>
+            <a className="text-2xl" href={`mailto:${pageInfo.email}`}>
+              {pageInfo.email}
+            </a>
           </div>
 
           <div className="flex items-center justify-center space-x-5">
             <MapPinIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-            <p className="text-2xl">123 Developer Lane</p>
+            <p className="text-2xl">{pageInfo.address}</p>
           </div>
         </div>
 
