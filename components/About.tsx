@@ -2,10 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "@/typings";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,7 +20,8 @@ const About = (props: Props) => {
       </h3>
 
       <motion.img
-        src="https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/406340275_7042559135801737_4998715202098811515_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=TIYq2Hsj8tEAX_6q1ak&_nc_oc=AQn-bQUKSMrdxxFI50wRxqf202KyY7F2YzFbGQUbbYjg4QQsQxwKDUziJSmyHw8wK1Y&_nc_ht=scontent.flcj1-1.fna&oh=00_AfCbmbPfZv5VdXnIiDUg1Ua5WoQ_hfwd430QH46B6ocMwA&oe=656C9049"
+        // src="https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/406340275_7042559135801737_4998715202098811515_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=TIYq2Hsj8tEAX_6q1ak&_nc_oc=AQn-bQUKSMrdxxFI50wRxqf202KyY7F2YzFbGQUbbYjg4QQsQxwKDUziJSmyHw8wK1Y&_nc_ht=scontent.flcj1-1.fna&oh=00_AfCbmbPfZv5VdXnIiDUg1Ua5WoQ_hfwd430QH46B6ocMwA&oe=656C9049"
+        src={urlFor(pageInfo?.profilePic).url()}
         initial={{ x: -200, opacity: 0 }}
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -34,9 +37,10 @@ const About = (props: Props) => {
         </h4>
 
         <p className="text-sm">
-          With 4 years of expertise in React JS, JavaScript, Tailwind, Redux,
+          {/* With 4 years of expertise in React JS, JavaScript, Tailwind, Redux,
           Typescript, and ShadCn, coupled with a comprehensive 12-year
-          background in Software Development.
+          background in Software Development. */}
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>
