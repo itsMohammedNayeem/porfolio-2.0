@@ -1,5 +1,6 @@
-'use client'
+'use client';
 
+import cx from 'classnames'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
@@ -48,7 +49,15 @@ const Header = ({ socials }: Props) => {
           url="https://www.facebook.com/iammohammednayeem/"
         /> */}
 
-        {socials?.map(social => <SocialIcon key={social._id} url={social.url} fgColor='gray' bgColor='transparent' />)}
+        {socials?.map(social => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor='currentColor'
+            bgColor='transparent'
+            className='text-gray-500 transition-colors duration-200 hover:text-sun'
+          />
+        ))}
       </motion.div>
 
       <Link href='#contact'>
