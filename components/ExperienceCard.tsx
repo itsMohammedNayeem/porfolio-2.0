@@ -57,7 +57,7 @@ const ExperienceCard = ({ experience }: Props) => {
           ))}
         </div>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg h-[280px] overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]">
+        <ul className="list-disc space-y-4 ml-5 text-lg h-[280px] overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-sun">
           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
