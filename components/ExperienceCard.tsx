@@ -8,7 +8,7 @@ type Props = { experience: Experience }
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className='flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]'>
+    <article className='flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-gray-16 p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]'>
       <motion.img
         initial={{
           y: -100,
@@ -57,22 +57,6 @@ const ExperienceCard = ({ experience }: Props) => {
         </div>
 
         <ul className='scrollbar-track-black ml-5 h-[280px] list-disc space-y-4 overflow-y-scroll text-lg scrollbar-thin scrollbar-thumb-sun'>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-
           {experience?.points?.map((point, i) => <li key={i}>{point}</li>)}
         </ul>
       </div>

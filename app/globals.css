@@ -5,7 +5,9 @@
 @layer base {
   @font-face {
     font-family: 'CascadiaMono';
-    src: local('CascadiaMono'), url('../public/fonts/CascadiaMono.woff2') format('woff2');
+    src:
+      local('CascadiaMono'),
+      url('../public/fonts/CascadiaMono.woff2') format('woff2');
   }
 }
 @layer components {

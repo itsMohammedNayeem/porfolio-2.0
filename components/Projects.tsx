@@ -36,7 +36,7 @@ const Projects = ({ projects }: Props) => {
 
             <div className='max-w-6xl space-y-10 px-0 md:px-10'>
               <h4 className='text-center text-4xl font-semibold'>
-                <span className='underline decoration-sun'>
+                <span className='underline underline-offset-4 decoration-sun'>
                   Case study {i + 1} of {projects.length}:
                 </span>{' '}
                 {project.title}

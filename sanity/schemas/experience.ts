@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     {
+      name: 'jobId',
+      title: 'JobId',
+      type: 'number'
+    },
+    {
       name: 'jobTitle',
       title: 'JobTitle',
       type: 'string'
@@ -48,7 +53,7 @@ export default defineType({
       name: 'points',
       title: 'Points',
       type: 'array',
-      of: [{ type: 'skill' }]
+      of: [{ type: 'string' }]
     }
   ]
 })
