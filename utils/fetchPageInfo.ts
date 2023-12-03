@@ -5,13 +5,11 @@ export const fetchPageInfo = async () => {
 
   // check res for error
   if (!res.ok) {
-    console.log(res.statusText)
+    console.error(res.statusText)
   }
 
   const data = await res.json()
   const pageInfo: PageInfo = data.pageInfo
-
-  //   console.log("fetching", pageInfo);
 
   return pageInfo
 }

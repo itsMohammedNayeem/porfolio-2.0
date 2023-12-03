@@ -27,6 +27,7 @@ export interface PageInfo extends SanityBody {
 
 export interface Experience extends SanityBody {
   _type: 'experience'
+  jobId: number
   company: string
   companyImage: Image
   dateStarted: date
