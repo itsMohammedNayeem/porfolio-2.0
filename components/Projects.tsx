@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import React from 'react'
+import { motion } from 'framer-motion';
+import React from 'react';
 
-import { urlFor } from '@/sanity'
-import { Project } from '@/typings'
+
+
+import { urlFor } from '@/sanity';
+import { Project } from '@/typings';
+
 
 type Props = { projects: Project[] }
 
 const Projects = ({ projects }: Props) => {
-  const test = console.log(projects)
-  console.log(test)
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -36,7 +36,7 @@ const Projects = ({ projects }: Props) => {
 
             <div className='max-w-6xl space-y-10 px-0 md:px-10'>
               <h4 className='text-center text-4xl font-semibold'>
-                <span className='underline underline-offset-4 decoration-sun'>
+                <span className='underline decoration-sun underline-offset-4'>
                   Case study {i + 1} of {projects.length}:
                 </span>{' '}
                 {project.title}
