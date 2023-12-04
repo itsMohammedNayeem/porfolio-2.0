@@ -51,7 +51,7 @@ export default async function Home() {
       </section>
 
       <Link href='#hero'>
-        <footer className='sticky bottom-5 w-full cursor-pointer'>
+        <footer className='sticky bottom-[1px] w-full cursor-pointer md:bottom-5'>
           <div className='flex items-center justify-center'>
             {/* <img
               src="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export default async function Home() {
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             /> */}
 
-            <ChevronDoubleUpIcon className='h-10 w-10 cursor-pointer rounded-full text-gray-500 transition-colors duration-200 hover:text-sun' />
+            <ChevronDoubleUpIcon className='h-7 w-7 cursor-pointer rounded-full text-gray-500 transition-colors duration-200 hover:text-sun md:h-10 md:w-10' />
           </div>
         </footer>
       </Link>

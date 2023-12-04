@@ -18,7 +18,7 @@ const Skills = ({ skills }: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className='relative mx-auto flex min-h-screen max-w-[2000px] flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0 xl:px-10'>
-      <h3 className='absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500'>Skills</h3>
+      <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Skills</h3>
 
       <h3 className='absolute top-36 uppercase tracking-[3px]'>Hover over a skill for current proficiency</h3>
 

@@ -28,7 +28,7 @@ const ContactMe = ({ pageInfo }: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className='relative z-0 mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left'>
-      <h3 className='absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500'>Contact Me</h3>
+      <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Contact Me</h3>
 
       <div className='flex flex-col space-y-10'>
         <h4 className='text-center text-4xl font-semibold'>
