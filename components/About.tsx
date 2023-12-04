@@ -27,12 +27,12 @@ const About = ({ pageInfo }: Props) => {
         className='mb-3 h-44 w-44 flex-shrink-0 rounded-full object-cover md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]'
       />
 
-      <div className='max-h-[400px] space-y-4 px-0 md:space-y-10 md:px-10'>
+      <div className='max-sm:max-h-[500px] space-y-4 px-0 md:space-y-10 md:px-10'>
         <h4 className='text-4xl font-semibold'>
           Here is a <span className='underline decoration-sun underline-offset-4'>little</span> background
         </h4>
 
-        <p className='overflow-y-scrollbar-track-gray-400/20 max-h-[430px] overflow-y-scroll text-sm scrollbar-thin scrollbar-thumb-sun/80'>
+        <p className='overflow-y-scrollbar-track-gray-400/20 max-sm:max-h-[450px] overflow-y-scroll text-sm scrollbar-thin scrollbar-thumb-sun/80'>
           {/* With 4 years of expertise in React JS, JavaScript, Tailwind, Redux,
           Typescript, and ShadCn, coupled with a comprehensive 12-year
           background in Software Development. */}
