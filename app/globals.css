@@ -12,7 +12,7 @@
 }
 @layer components {
   .heroButton {
-    @apply rounded-full border border-gray-14 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition-all hover:border-sun/40 hover:text-sun/40;
+    @apply rounded-full border border-gray-14 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition-colors duration-200 hover:border-sun hover:text-sun;
   }
 
   .contactInput {

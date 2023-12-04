@@ -1,4 +1,3 @@
-import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
 import About from '@/components/About'
@@ -16,14 +15,6 @@ import { fetchSkills } from '@/utils/fetchSkills'
 import { fetchSocial } from '@/utils/fetchSocials'
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid'
 
-type Props = {
-  // pageInfo: PageInfo;
-  // experiences: Experience[];
-  // skills: Skill[];
-  // projects: Project[];
-  // socials: Social[];
-}
-
 export default async function Home() {
   const pageInfo: PageInfo = await fetchPageInfo()
   const experiences: Experience[] = await fetchExperiences()
@@ -32,7 +23,7 @@ export default async function Home() {
   const socials: Social[] = await fetchSocial()
 
   return (
-    <main className='text-white overscroll-x-hidden z-0 h-screen snap-y snap-mandatory overflow-y-scroll bg-[rgb(36,36,36)] scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-sun'>
+    <main className='overscroll-x-hidden z-0 h-screen snap-y snap-mandatory overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun lg:scrollbar'>
       <Header socials={socials} />
 
       <section id='hero' className='snap-start'>
@@ -68,7 +59,7 @@ export default async function Home() {
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             /> */}
 
-            <ChevronDoubleUpIcon className='h-10 w-10 cursor-pointer rounded-full grayscale filter hover:grayscale-0' />
+            <ChevronDoubleUpIcon className='h-10 w-10 cursor-pointer rounded-full text-gray-500 transition-colors duration-200 hover:text-sun' />
           </div>
         </footer>
       </Link>
