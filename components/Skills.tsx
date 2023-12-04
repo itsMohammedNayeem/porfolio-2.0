@@ -10,6 +10,8 @@ import Skill from './Skill'
 type Props = { skills: SkillType[] }
 
 const Skills = ({ skills }: Props) => {
+  skills?.sort((a, b) => b.progress - a.progress)
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

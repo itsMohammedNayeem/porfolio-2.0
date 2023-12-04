@@ -1,13 +1,10 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion } from 'framer-motion'
+import React from 'react'
 
-
-
-import { urlFor } from '@/sanity';
-import { Project } from '@/typings';
-
+import { urlFor } from '@/sanity'
+import { Project } from '@/typings'
 
 type Props = { projects: Project[] }
 

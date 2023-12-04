@@ -25,18 +25,18 @@ const Hero = ({ pageInfo }: Props) => {
       <img
         src={urlFor(pageInfo?.heroImage).url()}
         className='relative mx-auto h-32 w-32 rounded-full object-cover'
-        alt="Nayeem's profile picture"
+        alt='Profile picture'
       />
 
       <div className='z-20'>
-        <h2 className='pb-2 text-sm uppercase tracking-[15px] text-gray-500'>{pageInfo?.role}</h2>
+        <h2 className='text-xs uppercase tracking-[15px] text-gray-500 md:text-sm'>{pageInfo?.role}</h2>
 
-        <h1 className='px-10 text-5xl font-semibold lg:text-6xl'>
-          <span className='font-mono mr-3'>{text}</span>
+        <h1 className='h-[20px] p-10 text-2xl font-semibold text-white md:text-5xl lg:text-6xl'>
+          <span className='mr-3 font-mono'>{text}</span>
           <Cursor cursorColor='#F7AB0A' />
         </h1>
 
-        <div className='pt-5'>
+        <div className='relative bottom-[-30px] md:bottom-[-70px]'>
           <Link href='#about'>
             <button className='heroButton'>About</button>
           </Link>
