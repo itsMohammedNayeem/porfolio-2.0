@@ -11,4 +11,4 @@ bun dev
 
 Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The data is maintained in SANITY IO and is dynamic. Framer motion is used for animations. 
+The data is maintained in SANITY IO and is dynamic. Framer motion is used for animations.

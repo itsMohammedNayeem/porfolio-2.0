@@ -1,6 +1,5 @@
 'use client'
 
-import cx from 'classnames'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
@@ -70,7 +69,13 @@ const Header = ({ socials }: Props) => {
           animate={{ x: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
           className='flex flex-row items-center'>
-          <SocialIcon network='email' fgColor='gray' bgColor='transparent' url='' />
+          <SocialIcon
+            network='email'
+            fgColor='currentColor'
+            bgColor='transparent'
+            className='text-gray-500 transition-colors duration-200 hover:text-sun'
+            url=''
+          />
           <p className='hidden cursor-pointer text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</p>
         </motion.div>
       </Link>
