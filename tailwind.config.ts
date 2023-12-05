@@ -5,6 +5,7 @@ const config: Config = {
   theme: {
     colors: {
       white: '#FFFFFF',
+      black: '#000000',
       sun: '#F7AB0A',
       slate: {
         DEFAULT: '#1F2937',
