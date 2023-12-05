@@ -18,23 +18,24 @@ const Projects = ({ projects }: Props) => {
       <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Projects</h3>
 
       <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun'>
-        {projects?.map((project, i) => (
+        {projects?.map((project) => (
           <div
-            key={i}
-            className='flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44'>
+            key={project.projectId}
+            className='flex w-screen h-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44'>
             <motion.img
               initial={{ opacity: 0, y: -300 }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               src={urlFor(project?.image).url()}
+              className='h-[250px] w-[350px] md:h-[350px] md:w-[500px] object-cover rounded-xl shadow-xl'
               alt=''
             />
 
-            <div className='max-w-6xl space-y-10 px-0 md:px-10'>
-              <h4 className='text-center text-4xl font-semibold'>
+            <div className='max-w-6xl space-y-3 md:space-y-5 px-0 md:px-10'>
+              <h4 className='text-center text-1xl font-semibold'>
                 <span className='underline decoration-sun underline-offset-4'>
-                  Case study {i + 1} of {projects.length}:
+                  Project {project.projectId} of {projects.length}:
                 </span>{' '}
                 {project.title}
               </h4>
@@ -44,7 +45,7 @@ const Projects = ({ projects }: Props) => {
                   {project.technologies.map(technology => (
                     <img
                       key={technology._id}
-                      className='h-10 w-10 rounded-full'
+                      className='h-6 w-6 md:h-10 md:w-10 rounded-full'
                       src={urlFor(technology.image).url()}
                       alt={technology.title}
                     />
@@ -52,7 +53,7 @@ const Projects = ({ projects }: Props) => {
                 </div>
               )}
 
-              <p className='text-center text-lg md:text-left'>{project.summary}</p>
+              <p className='text-center text-sm md:text-left'>{project.summary}</p>
             </div>
           </div>
         ))}

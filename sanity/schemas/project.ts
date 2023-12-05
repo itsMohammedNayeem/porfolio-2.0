@@ -6,34 +6,40 @@ export default defineType({
   type: 'document',
   fields: [
     {
+      name: 'projectId',
+      title: 'ProjectId',
+      description: 'Project Id',
+      type: 'number',
+    },
+    {
       name: 'title',
       title: 'Title',
       description: 'Title of the project',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'summary',
       title: 'Summary',
-      type: 'text'
+      type: 'text',
     },
     {
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'skill' } }]
+      of: [{type: 'reference', to: {type: 'skill'}}],
     },
     {
       name: 'linkToBuild',
       title: 'linkToBuild',
-      type: 'url'
-    }
-  ]
+      type: 'url',
+    },
+  ],
 })
