@@ -6,7 +6,7 @@ const config: Config = {
     colors: {
       white: '#FFFFFF',
       black: '#000000',
-      sun: '#F7AB0A',
+      sun: '#D92815',
       slate: {
         DEFAULT: '#1F2937',
         400: 'rgb(148 163 184)'
