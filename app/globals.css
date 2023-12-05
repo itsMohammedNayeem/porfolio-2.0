@@ -16,6 +16,6 @@
   }
 
   .contactInput {
-    @apply rounded-sm border-b border-gray-14 bg-slate-400/10 px-6 py-4 text-gray-500 placeholder-gray-500 outline-none transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
+    @apply rounded-sm border-b border-gray-14 bg-slate-400/10 px-2 py-2 md:px-3 md:py-2 text-gray-500 placeholder-gray-500 outline-none transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
   }
 }
