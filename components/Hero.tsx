@@ -33,7 +33,7 @@ const Hero = ({ pageInfo }: Props) => {
 
         <h1 className='h-[20px] p-10 text-2xl font-semibold text-white md:text-5xl lg:text-6xl'>
           <span className='mr-3 font-mono'>{text}</span>
-          <Cursor cursorColor='#F7AB0A' />
+          <Cursor cursorColor='#D92815' />
         </h1>
 
         <div className='relative bottom-[-30px] md:bottom-[-70px]'>
