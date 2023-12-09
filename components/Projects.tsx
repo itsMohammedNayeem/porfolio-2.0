@@ -17,7 +17,7 @@ const Projects = ({ projects }: Props) => {
       className='relative z-0 mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden text-left md:flex-row'>
       <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Projects</h3>
 
-      <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun'>
+      <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun'>
         {projects?.map(project => (
           <div
             key={project.projectId}
