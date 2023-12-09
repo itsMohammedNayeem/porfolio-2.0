@@ -23,7 +23,7 @@ export default async function Home() {
   const socials: Social[] = await fetchSocial()
 
   return (
-    <main className='overscroll-x-hidden z-0 h-screen snap-y snap-mandatory overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun lg:scrollbar'>
+    <main className='overscroll-x-hidden z-0 h-screen snap-y snap-mandatory overflow-y-auto bg-[rgb(36,36,36)] text-white scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun lg:scrollbar'>
       <Header socials={socials} />
 
       <section id='hero' className='snap-start'>

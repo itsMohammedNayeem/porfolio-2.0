@@ -32,7 +32,7 @@ const About = ({ pageInfo }: Props) => {
           Here is a <span className='underline decoration-sun underline-offset-4'>little</span> background
         </h4>
 
-        <p className='overflow-y-scrollbar-track-gray-400/20 max-sm:max-h-[450px] overflow-y-scroll text-sm scrollbar-thin scrollbar-thumb-sun/80'>
+        <p className='overflow-y-scrollbar-track-gray-400/20 max-sm:max-h-[450px] overflow-y-auto text-sm scrollbar-thin scrollbar-thumb-sun/80'>
           {/* With 4 years of expertise in React JS, JavaScript, Tailwind, Redux,
           Typescript, and ShadCn, coupled with a comprehensive 12-year
           background in Software Development. */}
