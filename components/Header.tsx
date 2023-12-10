@@ -48,15 +48,17 @@ const Header = ({ socials }: Props) => {
           url="https://www.facebook.com/iammohammednayeem/"
         /> */}
 
-        {socials?.map(social => (
-          <SocialIcon
-            key={social._id}
-            url={social.url}
-            fgColor='currentColor'
-            bgColor='transparent'
-            className='text-gray-500 transition-colors duration-200 hover:text-sun'
-          />
-        ))}
+        {socials
+          ?.sort((a, b) => a.socialId - b.socialId)
+          .map(social => (
+            <SocialIcon
+              key={social.socialId}
+              url={social.url}
+              fgColor='currentColor'
+              bgColor='transparent'
+              className='text-gray-500 transition-colors duration-200 hover:text-sun'
+            />
+          ))}
       </motion.div>
 
       <Link href='#contact'>

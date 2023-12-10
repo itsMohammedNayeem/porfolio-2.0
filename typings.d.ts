@@ -63,6 +63,7 @@ export interface Project extends SanityBody {
 }
 
 export interface Social extends SanityBody {
+  socialId: number
   _type: 'social'
   title: string
   url: string

@@ -6,15 +6,20 @@ export default defineType({
   type: 'document',
   fields: [
     {
+      name: 'socialId',
+      title: 'Social Id',
+      type: 'number',
+    },
+    {
       name: 'title',
       title: 'Title',
       description: 'platform for social media',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'url',
       title: 'Url',
-      type: 'url'
-    }
-  ]
+      type: 'url',
+    },
+  ],
 })
