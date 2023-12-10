@@ -18,7 +18,7 @@ const Projects = ({ projects }: Props) => {
       <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Projects</h3>
 
       <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun'>
-        {projects?.map(project => (
+        {projects?.sort((a, b) => a.projectId - b.projectId).map(project => (
           <div
             key={project.projectId}
             className='flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44'>
