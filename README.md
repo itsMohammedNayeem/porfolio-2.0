@@ -1,17 +1,60 @@
-This repository contains a Next.js project. It includes several components such as `Hero`, `Skills`, `Header` and a global CSS file. The `Hero` component is responsible for rendering the hero section of the website. The `Skills` component displays a list of skills. The `Header` component renders the header of the website and the `globals.css` file contains global styles for the project.
+# Portfolio Website
 
-To run this project, use one of the following commands:
+This portfolio website is built using Next.js and Sanity, showcasing professional experiences, skills, projects, and contact information. It's designed to be interactive, responsive, and user-friendly, offering a modern approach to personal branding and online presence.
 
-```bash
-npm run dev
-yarn dev
-pnpm dev
-bun dev
-```
+## Features
 
-Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Dynamic Content Sections**: Includes About, Experience, Skills, Projects, and Contact Me sections.
+- **Interactive UI**: Leverages Framer Motion for smooth animations.
+- **Content Management**: Integrates with Sanity CMS for easy management and updates of portfolio content.
+- **Responsive Design**: Ensures compatibility across various devices and screen sizes.
 
-The data is maintained in SANITY IO and is dynamic. Framer motion is used for animations.
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+What you need to install the software:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [Sanity CLI](https://www.sanity.io/docs/getting-started-with-sanity-cli) (for managing Sanity studio)
+
+### Installation
+
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/itsMohammedNayeem/porfolio-2.0.git
+   ```
+
+2. **Install Dependencies**
+   ```sh
+    npm install
+    ```
+
+3. **Start the Development Server**
+    ```sh
+    npm run dev
+    ```
+
+4. **Open the Source Code and Start Editing!**
+
+### Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- [Sanity](https://www.sanity.io/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Headless UI](https://headlessui.dev/)
+- [Heroicons](https://heroicons.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Scroll](https://www.npmjs.com/package/react-scroll)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## Screenshots
 
 ![Screenshot 2023-12-08 at 2 40 58 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/b604707c-d226-4e89-9fa2-f37c2bbfc0d0)
 
