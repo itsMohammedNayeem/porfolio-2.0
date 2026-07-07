@@ -23,7 +23,7 @@
     "react-hook-form": "^7.49.3",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^6.16.0",
-    "sanity": "^3.20.2",
+    "sanity": "^3.24.1",
     "styled-components": "^6.1.3"
   },
   "devDependencies": {
@@ -33,7 +33,7 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
     "babel-eslint": "^10.1.0",
-    "eslint": "^9.0.0",
+    "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-next": "14.0.4",
