@@ -1,10 +1,6 @@
-'use client'
-
 import { motion } from 'framer-motion'
-import React from 'react'
 
-import { Skill as SkillType } from '@/typings'
-
+import type { Skill as SkillType } from '../types'
 import Skill from './Skill'
 
 type Props = { skills: SkillType[] }

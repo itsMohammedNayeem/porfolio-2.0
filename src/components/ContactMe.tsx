@@ -1,11 +1,8 @@
-'use client'
-
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
-import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { PageInfo } from '@/typings'
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
+import type { PageInfo } from '../types'
 
 type Props = { pageInfo: PageInfo }
 type Inputs = {

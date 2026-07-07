@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
-import React from 'react'
 
-import { urlFor } from '@/sanity'
-import { Experience } from '@/typings'
+import { urlFor } from '../lib/sanity'
+import type { Experience } from '../types'
 
 type Props = { experience: Experience }
 
@@ -20,6 +19,7 @@ const ExperienceCard = ({ experience }: Props) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             src={urlFor(experience.companyImage).url()}
+            alt={experience.company}
             className='h-20 w-20 rounded-full object-cover object-center md:h-32 md:w-32 xl:h-[150px] xl:w-[150px]'
           />
           <div>
@@ -33,22 +33,6 @@ const ExperienceCard = ({ experience }: Props) => {
         </div>
 
         <div className='my-2 flex flex-wrap gap-y-2 space-x-1 md:my-3 md:space-x-2'>
-          {/* <img
-            src="https://live.staticflickr.com/8065/8220185645_dd4c773717.jpg"
-            className="w-10 h-10 rounded-full "
-            alt="React"
-          />
-          <img
-            src="https://live.staticflickr.com/8065/8220185645_dd4c773717.jpg"
-            className="w-10 h-10 rounded-full "
-            alt="React"
-          />
-          <img
-            src="https://live.staticflickr.com/8065/8220185645_dd4c773717.jpg"
-            className="w-10 h-10 rounded-full "
-            alt="React"
-          /> */}
-
           {experience.technologies.map(technology => (
             <img
               key={technology._id}

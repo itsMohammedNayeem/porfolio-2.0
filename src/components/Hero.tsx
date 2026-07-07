@@ -1,18 +1,13 @@
-'use client'
-
-import Link from 'next/link'
-import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-import { urlFor } from '@/sanity'
-import { PageInfo } from '@/typings'
-
+import { urlFor } from '../lib/sanity'
+import type { PageInfo } from '../types'
 import BackgroundCircles from './BackgroundCircles'
 
 type Props = { pageInfo: PageInfo }
 
 const Hero = ({ pageInfo }: Props) => {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [`Hi, I am ${pageInfo?.name}`, 'Guy-who-loves-Coffee.tsx', '<ButLovesToCodeMore />'],
     loop: true,
     delaySpeed: 2000
@@ -37,21 +32,21 @@ const Hero = ({ pageInfo }: Props) => {
         </h1>
 
         <div className='relative bottom-[-30px] md:bottom-[-70px]'>
-          <Link href='#about'>
+          <a href='#about'>
             <button className='heroButton'>About</button>
-          </Link>
+          </a>
 
-          <Link href='#experience'>
+          <a href='#experience'>
             <button className='heroButton'>Experience</button>
-          </Link>
+          </a>
 
-          <Link href='#skills'>
+          <a href='#skills'>
             <button className='heroButton'>Skills</button>
-          </Link>
+          </a>
 
-          <Link href='#projects'>
+          <a href='#projects'>
             <button className='heroButton'>Projects</button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

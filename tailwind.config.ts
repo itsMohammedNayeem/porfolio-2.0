@@ -1,7 +1,8 @@
+import tailwindScrollbar from 'tailwind-scrollbar'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     colors: {
       white: '#FFFFFF',
@@ -27,6 +28,6 @@ const config: Config = {
       }
     }
   },
-  plugins: [require('tailwind-scrollbar')]
+  plugins: [tailwindScrollbar]
 }
 export default config

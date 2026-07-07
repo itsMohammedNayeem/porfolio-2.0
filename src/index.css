@@ -7,7 +7,11 @@
     font-family: 'CascadiaMono';
     src:
       local('CascadiaMono'),
-      url('../public/fonts/CascadiaMono.woff2') format('woff2');
+      url('/fonts/CascadiaMono.woff2') format('woff2');
+  }
+
+  body {
+    font-family: 'Inter Variable', sans-serif;
   }
 }
 @layer components {

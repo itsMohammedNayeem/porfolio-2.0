@@ -2,21 +2,16 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+sanity/node_modules
+
+# build output
+/dist
+
+# generated content (scripts/fetch-content.mjs)
+/src/data/content.json
 
 # testing
 /coverage
-
-# next.js
-/.next/
-/out/
-
-sanity/node_modules
-
-# production
-/build
 
 # misc
 .DS_Store
@@ -35,4 +30,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# local resume source docs (content source of truth, not site assets)
+resume.md
+oldResume.md

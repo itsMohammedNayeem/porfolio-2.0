@@ -5,7 +5,7 @@ interface SanityBody {
   _updatedAt: string
 }
 
-interface Image {
+export interface SanityImage {
   _type: 'image'
   asset: {
     _ref: string
@@ -19,52 +19,60 @@ export interface PageInfo extends SanityBody {
   backgroundInformation: string
   email: string
   role: string
-  heroImage: Image
+  heroImage: SanityImage
   name: string
   phoneNumber: string
-  profilePic: Image
-}
-
-export interface Experience extends SanityBody {
-  _type: 'experience'
-  jobId: number
-  company: string
-  companyImage: Image
-  dateStarted: date
-  dateEnded: date
-  isCurrentlyWorkingHere: boolean
-  jobTitle: string
-  points: string[]
-  technologies: Technology[]
+  profilePic: SanityImage
 }
 
 export interface Technology extends SanityBody {
   _type: 'skill'
-  image: Image
+  image: SanityImage
   progress: number
   title: string
 }
 
 export interface Skill extends SanityBody {
   _type: 'skill'
-  image: Image
+  image: SanityImage
   progress: number
   title: string
 }
 
+export interface Experience extends SanityBody {
+  _type: 'experience'
+  jobId: number
+  company: string
+  companyImage: SanityImage
+  dateStarted: string
+  dateEnded: string
+  isCurrentlyWorkingHere: boolean
+  jobTitle: string
+  points: string[]
+  technologies: Technology[]
+}
+
 export interface Project extends SanityBody {
+  _type: 'project'
   projectId: number
   title: string
-  _type: 'project'
-  image: Image
+  image: SanityImage
   linkToBuild: string
   summary: string
   technologies: Technology[]
 }
 
 export interface Social extends SanityBody {
-  socialId: number
   _type: 'social'
+  socialId: number
   title: string
   url: string
+}
+
+export interface SiteContent {
+  pageInfo: PageInfo
+  experiences: Experience[]
+  skills: Skill[]
+  projects: Project[]
+  socials: Social[]
 }

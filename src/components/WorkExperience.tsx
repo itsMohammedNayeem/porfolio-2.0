@@ -1,10 +1,6 @@
-'use client'
-
 import { motion } from 'framer-motion'
-import React from 'react'
 
-import { Experience } from '@/typings'
-
+import type { Experience } from '../types'
 import ExperienceCard from './ExperienceCard'
 
 type Props = { experiences: Experience[] }

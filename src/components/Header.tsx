@@ -1,11 +1,7 @@
-'use client'
-
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 
-import { Social } from '@/typings'
+import type { Social } from '../types'
 
 type Props = { socials: Social[] }
 
@@ -21,33 +17,6 @@ const Header = ({ socials }: Props) => {
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
         className='flex flex-row items-center'>
-        {/* social icons */}
-        {/* <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.linkedin.com/in/itsmohammednayeem/"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://twitter.com/fmaker123"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.instagram.com/itsmohammednayeem/"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://github.com/itsMohammedNayeem/"
-        />
-        <SocialIcon
-          fgColor="gray"
-          bgColor="transparent"
-          url="https://www.facebook.com/iammohammednayeem/"
-        /> */}
-
         {socials
           ?.sort((a, b) => a.socialId - b.socialId)
           .map(social => (
@@ -61,7 +30,7 @@ const Header = ({ socials }: Props) => {
           ))}
       </motion.div>
 
-      <Link href='#contact'>
+      <a href='#contact'>
         <motion.div
           initial={{
             x: 500,
@@ -80,7 +49,7 @@ const Header = ({ socials }: Props) => {
           />
           <p className='hidden cursor-pointer text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</p>
         </motion.div>
-      </Link>
+      </a>
     </header>
   )
 }

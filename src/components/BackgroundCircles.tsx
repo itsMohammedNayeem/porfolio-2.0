@@ -1,11 +1,6 @@
-'use client'
-
 import { motion } from 'framer-motion'
-import React from 'react'
 
-type Props = {}
-
-const BackgroundCircles = (props: Props) => {
+const BackgroundCircles = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
