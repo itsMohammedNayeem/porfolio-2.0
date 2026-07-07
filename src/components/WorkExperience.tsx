@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 import type { Experience } from '../types'
 import ExperienceCard from './ExperienceCard'
