@@ -1,69 +1,50 @@
 # Portfolio Website
 
-This portfolio website is built using Next.js and Sanity, showcasing professional experiences, skills, projects, and contact information. It's designed to be interactive, responsive, and user-friendly, offering a modern approach to personal branding and online presence.
+Personal portfolio of Mohammed Nayeem — Senior React.js Developer. A single-page,
+dark-themed site with About, Experience, Skills, Projects, and Contact sections.
 
-## Features
+Live: https://portfolio-2-0-itsmohammednayeem.vercel.app/
 
-- **Dynamic Content Sections**: Includes About, Experience, Skills, Projects, and Contact Me sections.
-- **Interactive UI**: Leverages Framer Motion for smooth animations.
-- **Content Management**: Integrates with Sanity CMS for easy management and updates of portfolio content.
-- **Responsive Design**: Ensures compatibility across various devices and screen sizes.
+## Stack
 
-## Getting Started
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/), built with [Vite](https://vite.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling, [Framer Motion](https://www.framer.com/motion/) for animations
+- [Sanity](https://www.sanity.io/) as the content backend — content is fetched at build time
+  into a static JSON snapshot, so the deployed site is fully static (no server, no runtime CMS calls)
+- Deployed on [Vercel](https://vercel.com/) as a static build
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## Getting started
 
-### Prerequisites
+```sh
+git clone https://github.com/itsMohammedNayeem/porfolio-2.0.git
+cd porfolio-2.0
+npm install
+npm run dev
+```
 
-What you need to install the software:
+`npm run dev` (and `npm run build`) first runs `scripts/fetch-content.mjs`, which pulls
+the latest content from Sanity into `src/data/content.json`. No environment variables
+are required — see `.env.example`.
 
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- [Sanity CLI](https://www.sanity.io/docs/getting-started-with-sanity-cli) (for managing Sanity studio)
+### Commands
 
-### Installation
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | fetch content + start the Vite dev server |
+| `npm run build` | fetch content + type-check + production build to `dist/` |
+| `npm run preview` | serve the production build locally |
+| `npm run lint` | ESLint |
+| `npm run fmt` | Prettier |
 
-1. **Clone the Repository**
-   ```sh
-   git clone https://github.com/itsMohammedNayeem/porfolio-2.0.git
-   ```
+## Content management (Sanity Studio)
 
-2. **Install Dependencies**
-   ```sh
-    npm install
-    ```
+The Sanity Studio lives in [`sanity/`](sanity/) as a standalone project
+(schemas: `pageInfo`, `experience`, `skill`, `project`, `social`):
 
-3. **Start the Development Server**
-    ```sh
-    npm run dev
-    ```
+```sh
+cd sanity
+npm install
+npm run dev   # local studio on http://localhost:3333
+```
 
-4. **Open the Source Code and Start Editing!**
-
-### Technologies Used
-
-- [Next.js](https://nextjs.org/)
-- [Sanity](https://www.sanity.io/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Headless UI](https://headlessui.dev/)
-- [Heroicons](https://heroicons.com/)
-- [React Icons](https://react-icons.github.io/react-icons/)
-- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
-- [React Hook Form](https://react-hook-form.com/)
-- [React Scroll](https://www.npmjs.com/package/react-scroll)
-- [TypeScript](https://www.typescriptlang.org/)
-
-## Screenshots
-
-![Screenshot 2023-12-08 at 2 40 58 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/b604707c-d226-4e89-9fa2-f37c2bbfc0d0)
-
-![Screenshot 2023-12-08 at 2 42 22 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/1d4b90bb-390d-4738-b8d0-1b7baa56c7b4)
-
-![Screenshot 2023-12-08 at 2 42 45 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/ed4cf19e-be32-49d0-a827-505d68c272c0)
-
-![Screenshot 2023-12-08 at 2 42 57 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/59e2ccd3-5a39-4a15-a104-fb14f804829a)
-
-![Screenshot 2023-12-08 at 2 43 10 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/4d91ce4c-00fe-4d04-aa6d-d78ec0f0587e)
-
-![Screenshot 2023-12-08 at 2 43 17 PM](https://github.com/itsMohammedNayeem/porfolio-2.0/assets/127741549/5ded2814-5095-478b-9b29-e6c7fee4b126)
+Content changes appear on the site after the next deploy (the build re-fetches content).

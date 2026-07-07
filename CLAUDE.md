@@ -5,23 +5,22 @@ Live: https://portfolio-2-0-itsmohammednayeem.vercel.app/
 
 ## Tech stack
 
-**Current (being migrated):** Next.js 14 (App Router + Pages API routes), React 18,
-TypeScript, Tailwind CSS 3, framer-motion 10, Sanity v3 (project `79vh6zyc`,
-dataset `production`, publicly readable).
+Vite + React 19 + TypeScript SPA (migrated from Next.js 14 — see ANALYSIS.md),
+Tailwind CSS 3, framer-motion 11. Content comes from Sanity (project `79vh6zyc`,
+dataset `production`, publicly readable): `scripts/fetch-content.mjs` snapshots it
+into `src/data/content.json` at dev/build time, so the deployed site is fully static.
+Sanity Studio lives in `sanity/` as a standalone project (not bundled into the app).
 
-**Target (approved 2026-07-07, see ANALYSIS.md):** Vite + React 19 + TypeScript SPA,
-`@sanity/client` fetching content directly, `motion` v12, Tailwind CSS v4, ESLint 9
-flat config. Sanity Studio lives in `sanity/` as a standalone project (hosted via
-`sanity deploy`, not bundled into the app).
+Still pending from the roadmap: `motion` v12 rename, Tailwind v4, ESLint 9 flat config.
 
 ## Commands
 
 ```bash
-npm install        # NOTE: requires --legacy-peer-deps until fix/build-and-local-dev merges
-npm run dev        # dev server on :3000 (⚠️ another process may hold [::1]:3000 — test via 127.0.0.1)
-npm run build      # production build — must pass before any PR is "done"
+npm install        # clean install, no flags needed
+npm run dev        # prefetch content + Vite dev server on :5173 (⚠️ a stray process may hold [::1] ports — test via 127.0.0.1)
+npm run build      # prefetch + tsc --noEmit + vite build — must pass before any PR is "done"
+npm run preview    # serve the production build (:4173)
 npm run lint       # ESLint — must pass
-npx tsc --noEmit   # type-check — must pass
 ```
 
 ## Hard constraints

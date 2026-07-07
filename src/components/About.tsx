@@ -1,10 +1,7 @@
-'use client'
-
 import { motion } from 'framer-motion'
-import React from 'react'
 
-import { urlFor } from '@/sanity'
-import { PageInfo } from '@/typings'
+import { urlFor } from '../lib/sanity'
+import type { PageInfo } from '../types'
 
 type Props = { pageInfo: PageInfo }
 
@@ -18,12 +15,12 @@ const About = ({ pageInfo }: Props) => {
       <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>About</h3>
 
       <motion.img
-        // src="https://scontent.flcj1-1.fna.fbcdn.net/v/t39.30808-6/406340275_7042559135801737_4998715202098811515_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=TIYq2Hsj8tEAX_6q1ak&_nc_oc=AQn-bQUKSMrdxxFI50wRxqf202KyY7F2YzFbGQUbbYjg4QQsQxwKDUziJSmyHw8wK1Y&_nc_ht=scontent.flcj1-1.fna&oh=00_AfCbmbPfZv5VdXnIiDUg1Ua5WoQ_hfwd430QH46B6ocMwA&oe=656C9049"
         src={urlFor(pageInfo?.profilePic).url()}
         initial={{ x: -200, opacity: 0 }}
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
+        alt='Profile picture'
         className='mb-3 h-44 w-44 flex-shrink-0 rounded-full object-cover md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]'
       />
 
@@ -33,9 +30,6 @@ const About = ({ pageInfo }: Props) => {
         </h4>
 
         <p className='text-balance overflow-y-scrollbar-track-gray-400/20 max-sm:max-h-[450px] overflow-y-auto text-sm scrollbar-thin scrollbar-thumb-sun/80'>
-          {/* With 4 years of expertise in React JS, JavaScript, Tailwind, Redux,
-          Typescript, and ShadCn, coupled with a comprehensive 12-year
-          background in Software Development. */}
           {pageInfo?.backgroundInformation}
         </p>
       </div>
