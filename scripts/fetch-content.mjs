@@ -17,7 +17,8 @@ const client = createClient({
   projectId: process.env.SANITY_PROJECT_ID || '79vh6zyc',
   dataset: process.env.SANITY_DATASET || 'production',
   apiVersion: '2023-11-30',
-  useCdn: true
+  // no CDN: build-time snapshots must always see the latest published content
+  useCdn: false
 })
 
 const queries = {
