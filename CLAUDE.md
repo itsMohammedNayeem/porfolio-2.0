@@ -6,12 +6,12 @@ Live: https://portfolio-2-0-itsmohammednayeem.vercel.app/
 ## Tech stack
 
 Vite + React 19 + TypeScript SPA (migrated from Next.js 14 — see ANALYSIS.md),
-Tailwind CSS 3, framer-motion 11. Content comes from Sanity (project `79vh6zyc`,
-dataset `production`, publicly readable): `scripts/fetch-content.mjs` snapshots it
-into `src/data/content.json` at dev/build time, so the deployed site is fully static.
-Sanity Studio lives in `sanity/` as a standalone project (not bundled into the app).
-
-Still pending from the roadmap: `motion` v12 rename, Tailwind v4, ESLint 9 flat config.
+Tailwind CSS 4 (CSS-first `@theme` in `src/index.css`, `@tailwindcss/vite` plugin),
+`motion` v12, ESLint 9 flat config (`eslint.config.js`). Content comes from Sanity
+(project `79vh6zyc`, dataset `production`, publicly readable): `scripts/fetch-content.mjs`
+snapshots it into `src/data/content.json` at dev/build time, so the deployed site is
+fully static. Sanity Studio lives in `sanity/` as a standalone project (not bundled
+into the app).
 
 ## Commands
 
