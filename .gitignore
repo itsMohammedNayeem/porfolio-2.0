@@ -34,3 +34,4 @@ yarn-error.log*
 # local resume source docs (content source of truth, not site assets)
 resume.md
 oldResume.md
+WPPOpen.png

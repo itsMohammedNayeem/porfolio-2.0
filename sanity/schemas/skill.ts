@@ -25,6 +25,14 @@ export default defineType({
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'showInSkills',
+      title: 'Show in Skills grid',
+      type: 'boolean',
+      description:
+        'When off, this skill is hidden from the Skills grid but can still be used as a technology tag on experience/project cards. Defaults to shown.',
+      initialValue: true
     }
   ]
 })
