@@ -41,7 +41,7 @@ export default function App() {
       </section>
 
       <a href='#hero'>
-        <footer className='sticky bottom-[1px] w-full cursor-pointer md:bottom-5'>
+        <footer className='sticky bottom-px w-full cursor-pointer md:bottom-5'>
           <div className='flex items-center justify-center'>
             <ChevronDoubleUpIcon className='h-7 w-7 cursor-pointer rounded-full text-gray-500 transition-colors duration-200 hover:text-sun md:h-10 md:w-10' />
           </div>

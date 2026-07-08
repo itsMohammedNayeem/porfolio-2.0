@@ -20,7 +20,7 @@ const Projects = ({ projects }: Props) => {
           .map(project => (
             <div
               key={project.projectId}
-              className='flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44'>
+              className='flex h-screen w-screen shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44'>
               <motion.img
                 initial={{ opacity: 0, y: -300 }}
                 transition={{ duration: 1.2 }}

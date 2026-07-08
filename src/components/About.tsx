@@ -21,7 +21,7 @@ const About = ({ pageInfo }: Props) => {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         alt='Profile picture'
-        className='mb-3 h-44 w-44 flex-shrink-0 rounded-full object-cover md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]'
+        className='mb-3 h-44 w-44 shrink-0 rounded-full object-cover md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]'
       />
 
       <div className='max-sm:max-h-[500px] space-y-4 px-0 md:space-y-10 md:px-10'>

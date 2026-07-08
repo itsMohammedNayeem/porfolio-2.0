@@ -7,7 +7,7 @@ type Props = { experience: Experience }
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className='flex h-[510px] w-[320px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-gray-16 p-5 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px] xl:p-10'>
+    <article className='flex h-[510px] w-[320px] shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-gray-16 p-5 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px] xl:p-10'>
       <div className='px-0 md:px-10'>
         <div className='flex flex-row items-center justify-center gap-2 md:gap-4'>
           <motion.img
