@@ -1,6 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'tailwind-scrollbar';
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-sun: #d92815;
+
+  --color-slate-400: rgb(148 163 184);
+  --color-slate: #1f2937;
+
+  --color-gray-14: #242424;
+  --color-gray-16: #292929;
+  --color-gray-20: #333333;
+  --color-gray-300: rgb(209 213 219);
+  --color-gray-400: rgb(156 163 175);
+  --color-gray-500: rgb(107 114 128);
+  --color-gray: #e5e5e5;
+
+  --font-basefont: CascadiaMono, Consolas, monospace;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility heroButton {
+  @apply rounded-full border border-gray-14 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition-colors duration-200 hover:border-sun hover:text-sun;
+}
+@utility contactInput {
+  @apply rounded-xs border-b border-gray-14 bg-slate-400/10 px-2 py-2 md:px-3 md:py-2 text-gray-500 placeholder-gray-500 outline-hidden transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
+}
 
 @layer base {
   @font-face {
@@ -12,14 +57,5 @@
 
   body {
     font-family: 'Inter Variable', sans-serif;
-  }
-}
-@layer components {
-  .heroButton {
-    @apply rounded-full border border-gray-14 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition-colors duration-200 hover:border-sun hover:text-sun;
-  }
-
-  .contactInput {
-    @apply rounded-sm border-b border-gray-14 bg-slate-400/10 px-2 py-2 md:px-3 md:py-2 text-gray-500 placeholder-gray-500 outline-none transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
   }
 }
