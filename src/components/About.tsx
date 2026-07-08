@@ -12,7 +12,7 @@ const About = ({ pageInfo }: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className='relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-center px-10 text-center md:flex-row md:justify-evenly md:text-left'>
-      <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>About</h3>
+      <h2 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>About</h2>
 
       <motion.img
         src={urlFor(pageInfo?.profilePic).url()}
@@ -25,9 +25,9 @@ const About = ({ pageInfo }: Props) => {
       />
 
       <div className='max-sm:max-h-[500px] space-y-4 px-0 md:space-y-10 md:px-10'>
-        <h4 className='text-4xl font-semibold'>
+        <h3 className='text-4xl font-semibold'>
           Here is a <span className='underline decoration-sun underline-offset-4'>little</span> background
-        </h4>
+        </h3>
 
         <p className='text-balance overflow-y-scrollbar-track-gray-400/20 max-sm:max-h-[450px] overflow-y-auto text-sm scrollbar-thin scrollbar-thumb-sun/80'>
           {pageInfo?.backgroundInformation}

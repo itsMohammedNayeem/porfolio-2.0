@@ -12,7 +12,7 @@ const Projects = ({ projects }: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className='relative z-0 mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden text-left md:flex-row'>
-      <h3 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Projects</h3>
+      <h2 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Projects</h2>
 
       <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun'>
         {projects
@@ -32,12 +32,12 @@ const Projects = ({ projects }: Props) => {
               />
 
               <div className='max-w-6xl space-y-3 px-0 md:space-y-5 md:px-10'>
-                <h4 className='text-1xl text-center font-semibold'>
+                <h3 className='text-1xl text-center font-semibold'>
                   <span className='underline decoration-sun underline-offset-4'>
                     Project {project.projectId} of {projects.length}:
                   </span>{' '}
                   {project.title}
-                </h4>
+                </h3>
 
                 {project?.technologies?.length > 0 && (
                   <div className='flex items-center justify-center space-x-2'>

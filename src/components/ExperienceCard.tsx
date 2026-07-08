@@ -23,7 +23,7 @@ const ExperienceCard = ({ experience }: Props) => {
             className='h-20 w-20 rounded-full object-cover object-center md:h-32 md:w-32 xl:h-[150px] xl:w-[150px]'
           />
           <div>
-            <h4 className='text-xs font-light md:text-2xl'>{experience.jobTitle}</h4>
+            <h3 className='text-xs font-light md:text-2xl'>{experience.jobTitle}</h3>
             <p className='mt-1 text-base font-bold md:text-3xl'>{experience.company}</p>
             <p className='py-2 text-xs uppercase text-gray-300 md:py-3 xl:py-5'>
               {new Date(experience.dateStarted).toDateString()} -{' '}
