@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 
-import { urlFor } from '../lib/sanity'
+import { imageSrc } from '../lib/sanity'
 import type { Project } from '../types'
 
 type Props = { projects: Project[] }
@@ -26,9 +26,11 @@ const Projects = ({ projects }: Props) => {
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                src={urlFor(project?.image).url()}
+                src={project?.image && imageSrc(project.image, 800)}
                 className='h-[250px] w-[350px] rounded-xl object-cover shadow-xl md:h-[350px] md:w-[500px]'
                 alt={project.title}
+                loading='lazy'
+                decoding='async'
               />
 
               <div className='max-w-6xl space-y-3 px-0 md:space-y-5 md:px-10'>
@@ -44,9 +46,11 @@ const Projects = ({ projects }: Props) => {
                     {project.technologies.map(technology => (
                       <img
                         key={technology._id}
-                        className='h-6 w-6 rounded-full md:h-10 md:w-10'
-                        src={urlFor(technology.image).url()}
+                        className='h-6 w-6 rounded-full object-cover md:h-10 md:w-10'
+                        src={imageSrc(technology.image, 80)}
                         alt={technology.title}
+                        loading='lazy'
+                        decoding='async'
                       />
                     ))}
                   </div>

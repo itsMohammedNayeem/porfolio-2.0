@@ -59,3 +59,15 @@
     font-family: 'Inter Variable', sans-serif;
   }
 }
+
+/*
+  react-social-icons renders fixed 50px anchors. On small phones the header's
+  7 social icons plus the résumé/contact actions overflow the viewport and
+  clip off-screen, so shrink them below the sm breakpoint. Desktop is unchanged.
+*/
+@media (max-width: 639px) {
+  header .social-icon {
+    height: 1.875rem !important;
+    width: 1.875rem !important;
+  }
+}

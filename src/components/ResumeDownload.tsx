@@ -36,9 +36,9 @@ const ResumeDownload = () => {
   return (
     <details ref={ref} className='group relative'>
       <summary
-        className='flex cursor-pointer list-none items-center gap-1.5 text-sm uppercase text-gray-400 transition-colors duration-200 hover:text-sun [&::-webkit-details-marker]:hidden'
+        className='flex min-h-6 cursor-pointer list-none items-center gap-1.5 text-sm uppercase text-gray-400 transition-colors duration-200 hover:text-sun [&::-webkit-details-marker]:hidden'
         aria-label='Download résumé'>
-        <ArrowDownTrayIcon className='h-5 w-5' />
+        <ArrowDownTrayIcon className='h-6 w-6' />
         <span className='hidden md:inline'>Résumé</span>
       </summary>
 
