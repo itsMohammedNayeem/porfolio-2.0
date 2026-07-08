@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { SocialIcon } from 'react-social-icons'
 
 import type { Social } from '../types'

@@ -1,5 +1,5 @@
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import type { PageInfo } from '../types'
