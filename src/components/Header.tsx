@@ -2,6 +2,7 @@ import { motion } from 'motion/react'
 import { SocialIcon } from 'react-social-icons'
 
 import type { Social } from '../types'
+import ResumeDownload from './ResumeDownload'
 
 type Props = { socials: Social[] }
 
@@ -30,16 +31,18 @@ const Header = ({ socials }: Props) => {
           ))}
       </motion.div>
 
-      <a href='#contact'>
-        <motion.div
-          initial={{
-            x: 500,
-            opacity: 0,
-            scale: 0.5
-          }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
-          className='flex flex-row items-center'>
+      <motion.div
+        initial={{
+          x: 500,
+          opacity: 0,
+          scale: 0.5
+        }}
+        animate={{ x: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5 }}
+        className='flex flex-row items-center gap-3 md:gap-4'>
+        <ResumeDownload />
+
+        <a href='#contact' className='flex flex-row items-center'>
           <SocialIcon
             network='email'
             fgColor='currentColor'
@@ -48,8 +51,8 @@ const Header = ({ socials }: Props) => {
             url=''
           />
           <p className='hidden cursor-pointer text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</p>
-        </motion.div>
-      </a>
+        </a>
+      </motion.div>
     </header>
   )
 }
