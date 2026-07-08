@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 
-import { urlFor } from '../lib/sanity'
+import { imageSrc } from '../lib/sanity'
 import type { Skill as SkillType } from '../types'
 
 type Props = {
@@ -13,8 +13,10 @@ const Skill = ({ skill, directionLeft }: Props) => {
     <div className='group relative flex cursor-pointer'>
       <motion.img
         className='rounded-full object-cover w-14 h-14 md:w-18 md:h-18 lg:w-20 lg:h-20 xl:h-24 xl:w-24 filter group-hover:grayscale transition duration-300 ease-in-out'
-        src={urlFor(skill.image).url()}
+        src={imageSrc(skill.image, 200)}
         alt={skill.title}
+        loading='lazy'
+        decoding='async'
         initial={{ x: directionLeft ? -200 : 200, opacity: 0 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 
-import { urlFor } from '../lib/sanity'
+import { imageSrc } from '../lib/sanity'
 import type { Experience } from '../types'
 
 type Props = { experience: Experience }
@@ -18,8 +18,10 @@ const ExperienceCard = ({ experience }: Props) => {
             transition={{ duration: 1.2 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            src={urlFor(experience.companyImage).url()}
+            src={imageSrc(experience.companyImage, 300)}
             alt={experience.company}
+            loading='lazy'
+            decoding='async'
             className='h-20 w-20 rounded-full object-cover object-center md:h-32 md:w-32 xl:h-[150px] xl:w-[150px]'
           />
           <div>
@@ -36,9 +38,11 @@ const ExperienceCard = ({ experience }: Props) => {
           {experience.technologies.map(technology => (
             <img
               key={technology._id}
-              className='h-4 w-4 rounded-full md:h-8 md:w-8'
-              src={urlFor(technology.image).url()}
+              className='h-4 w-4 rounded-full object-cover md:h-8 md:w-8'
+              src={imageSrc(technology.image, 64)}
               alt={technology.title}
+              loading='lazy'
+              decoding='async'
             />
           ))}
         </div>

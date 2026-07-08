@@ -1,6 +1,6 @@
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-import { urlFor } from '../lib/sanity'
+import { imageSrc } from '../lib/sanity'
 import type { PageInfo } from '../types'
 import BackgroundCircles from './BackgroundCircles'
 
@@ -18,9 +18,12 @@ const Hero = ({ pageInfo }: Props) => {
       <BackgroundCircles />
 
       <img
-        src={urlFor(pageInfo?.heroImage).url()}
+        src={pageInfo?.heroImage && imageSrc(pageInfo.heroImage, 256)}
         className='relative mx-auto h-32 w-32 rounded-full object-cover'
         alt='Profile picture'
+        width={128}
+        height={128}
+        fetchPriority='high'
       />
 
       <div className='z-20'>

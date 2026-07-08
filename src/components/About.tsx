@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 
-import { urlFor } from '../lib/sanity'
+import { imageSrc } from '../lib/sanity'
 import type { PageInfo } from '../types'
 
 type Props = { pageInfo: PageInfo }
@@ -15,12 +15,14 @@ const About = ({ pageInfo }: Props) => {
       <h2 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>About</h2>
 
       <motion.img
-        src={urlFor(pageInfo?.profilePic).url()}
+        src={pageInfo?.profilePic && imageSrc(pageInfo.profilePic, 640)}
         initial={{ x: -200, opacity: 0 }}
         transition={{ duration: 1.2 }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         alt='Profile picture'
+        loading='lazy'
+        decoding='async'
         className='mb-3 h-44 w-44 shrink-0 rounded-full object-cover md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]'
       />
 
