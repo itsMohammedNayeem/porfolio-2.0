@@ -24,7 +24,7 @@ const client = createClient({
 const queries = {
   pageInfo: '*[_type == "pageInfo"][0]',
   experiences: '*[_type == "experience"] { ..., technologies[]-> }',
-  skills: '*[_type == "skill"]',
+  skills: '*[_type == "skill" && showInSkills != false]',
   projects: '*[_type == "project"] { ..., technologies[]-> }',
   socials: '*[_type == "social"]'
 }
