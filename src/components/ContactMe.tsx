@@ -23,7 +23,8 @@ const ContactMe = ({ pageInfo }: Props) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
       className='relative z-0 mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-gutter text-center md:flex-row md:text-left'>
       <h2 className='sectionLabel absolute top-20 md:top-24'>Contact Me</h2>
 

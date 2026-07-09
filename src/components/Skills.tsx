@@ -13,7 +13,8 @@ const Skills = ({ skills }: Props) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
       className='relative mx-auto flex min-h-screen max-w-[2000px] flex-col items-center justify-center gap-8 px-gutter py-24 text-center'>
       <div className='flex flex-col items-center gap-2'>
         <h2 className='sectionLabel'>Skills</h2>

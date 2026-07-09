@@ -10,7 +10,8 @@ const WorkExperience = ({ experiences }: Props) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
       className='relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden md:px-10 text-left md:flex-row'>
       <h2 className='sectionLabel absolute top-20 md:top-24'>Experience</h2>
       <div className='flex w-full snap-x snap-mandatory space-x-5 overflow-x-auto p-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-sun/80'>
