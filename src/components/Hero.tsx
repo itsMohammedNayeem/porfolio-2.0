@@ -26,31 +26,30 @@ const Hero = ({ pageInfo }: Props) => {
         fetchPriority='high'
       />
 
-      <div className='z-20'>
-        <p className='text-xs uppercase tracking-[15px] text-gray-500 md:text-sm'>{pageInfo?.role}</p>
+      <div className='z-20 flex flex-col items-center px-4'>
+        <p className='text-xs uppercase leading-relaxed tracking-[8px] text-gray-500 sm:tracking-[12px] md:text-sm md:tracking-[15px]'>
+          {pageInfo?.role}
+        </p>
 
-        <h1 className='h-[20px] p-10 text-2xl font-semibold text-white md:text-5xl lg:text-6xl'>
+        <h1 className='flex min-h-24 items-center justify-center py-6 text-2xl font-semibold text-white md:min-h-20 md:text-5xl lg:text-6xl'>
           <span className='mr-3 font-mono'>{text}</span>
           <Cursor cursorColor='#D92815' />
         </h1>
 
-        <div className='relative bottom-[-30px] md:bottom-[-70px]'>
-          <a href='#about'>
-            <button className='heroButton'>About</button>
+        <nav className='mt-6 flex flex-wrap items-center justify-center gap-3 md:mt-10'>
+          <a href='#about' className='heroButton'>
+            About
           </a>
-
-          <a href='#experience'>
-            <button className='heroButton'>Experience</button>
+          <a href='#experience' className='heroButton'>
+            Experience
           </a>
-
-          <a href='#skills'>
-            <button className='heroButton'>Skills</button>
+          <a href='#skills' className='heroButton'>
+            Skills
           </a>
-
-          <a href='#projects'>
-            <button className='heroButton'>Projects</button>
+          <a href='#projects' className='heroButton'>
+            Projects
           </a>
-        </div>
+        </nav>
       </div>
     </div>
   )

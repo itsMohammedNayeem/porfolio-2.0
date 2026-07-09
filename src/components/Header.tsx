@@ -19,7 +19,10 @@ const Header = ({ socials }: Props) => {
         transition={{ duration: 1.5 }}
         className='flex flex-row items-center'>
         {socials
-          ?.sort((a, b) => a.socialId - b.socialId)
+          // Drop the stale "Resume" entry (a defunct Google+ glyph linking to an
+          // old Google Drive file) — the dedicated résumé download replaces it.
+          ?.filter(social => !social.url?.includes('drive.google.com'))
+          .sort((a, b) => a.socialId - b.socialId)
           .map(social => (
             <SocialIcon
               key={social.socialId}
