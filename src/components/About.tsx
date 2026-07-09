@@ -10,7 +10,8 @@ const About = ({ pageInfo }: Props) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
       className='relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-start px-gutter pt-32 text-center md:flex-row md:justify-evenly md:pt-0 md:text-left'>
       <h2 className='sectionLabel absolute top-20 md:top-24'>About</h2>
 

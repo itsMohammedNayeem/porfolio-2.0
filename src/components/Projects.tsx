@@ -25,7 +25,8 @@ const Projects = ({ projects }: Props) => {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
       className='relative z-0 mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden text-left md:flex-row'>
       <h2 className='sectionLabel absolute top-20 md:top-24'>Projects</h2>
 
@@ -42,8 +43,9 @@ const Projects = ({ projects }: Props) => {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
               src={project?.image && imageSrc(project.image, 800)}
-              className='h-[250px] w-[350px] rounded-xl object-cover shadow-xl md:h-[350px] md:w-[500px]'
+              className='h-[250px] w-[350px] cursor-pointer rounded-xl object-cover shadow-xl transition-shadow hover:shadow-2xl hover:shadow-sun/20 md:h-[350px] md:w-[500px]'
               alt={project.title}
               loading='lazy'
               decoding='async'

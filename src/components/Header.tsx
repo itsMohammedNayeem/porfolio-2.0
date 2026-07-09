@@ -29,7 +29,7 @@ const Header = ({ socials }: Props) => {
               url={social.url}
               fgColor='currentColor'
               bgColor='transparent'
-              className='text-gray-500 transition-colors duration-200 hover:text-sun'
+              className='text-gray-500 transition duration-200 hover:text-sun motion-safe:hover:scale-110'
             />
           ))}
       </motion.div>
@@ -50,7 +50,7 @@ const Header = ({ socials }: Props) => {
             network='email'
             fgColor='currentColor'
             bgColor='transparent'
-            className='text-gray-500 transition-colors duration-200 hover:text-sun'
+            className='text-gray-500 transition duration-200 hover:text-sun motion-safe:hover:scale-110'
             url=''
           />
           <p className='hidden cursor-pointer text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</p>

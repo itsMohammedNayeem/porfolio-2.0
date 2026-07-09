@@ -52,7 +52,7 @@
 }
 
 @utility heroButton {
-  @apply inline-flex min-h-12 items-center justify-center rounded-full border border-gray-20 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition-colors duration-200 hover:border-sun hover:text-sun md:min-h-0;
+  @apply inline-flex min-h-12 items-center justify-center rounded-full border border-gray-20 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition duration-200 hover:border-sun hover:text-sun motion-safe:hover:-translate-y-0.5 md:min-h-0;
 }
 @utility contactInput {
   @apply rounded-xs border-b border-gray-14 bg-slate-400/10 px-2 py-2 md:px-3 md:py-2 text-gray-500 placeholder-gray-500 outline-hidden transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
@@ -77,6 +77,23 @@
 
   body {
     font-family: 'Inter Variable', sans-serif;
+  }
+}
+
+/*
+  Respect the OS "reduce motion" setting for CSS-driven animation that motion's
+  MotionConfig can't reach — the hero's animate-ping / animate-pulse rings and
+  the pulsing contact icons. Near-instant durations neutralise the movement
+  while leaving the layout intact.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
