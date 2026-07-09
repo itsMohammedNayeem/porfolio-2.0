@@ -1,13 +1,32 @@
 import { motion } from 'motion/react'
+import { useState } from 'react'
 
 import { imageSrc } from '../lib/sanity'
 import type { Experience } from '../types'
 
 type Props = { experience: Experience }
 
+const fmt = (date: string) => new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+
 const ExperienceCard = ({ experience }: Props) => {
+  // Desktop reveals the card on hover; touch/keyboard toggle it on tap/Enter,
+  // since hover doesn't exist on touch devices (cards would stay dimmed).
+  const [active, setActive] = useState(false)
+
   return (
-    <article className='flex h-[510px] w-[320px] shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-gray-16 p-5 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px] xl:p-10'>
+    <article
+      onClick={() => setActive(a => !a)}
+      onKeyDown={e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          setActive(a => !a)
+        }
+      }}
+      tabIndex={0}
+      role='button'
+      aria-pressed={active}
+      aria-label={`${experience.jobTitle} at ${experience.company} — tap to highlight`}
+      className={`flex h-[510px] w-[320px] shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-gray-16 p-5 transition-opacity duration-200 focus-visible:opacity-100 md:w-[600px] xl:w-[900px] xl:p-10 ${active ? 'opacity-100' : 'opacity-40 hover:opacity-100'}`}>
       <div className='px-0 md:px-10'>
         <div className='flex flex-row items-center justify-center gap-2 md:gap-4'>
           <motion.img
@@ -28,8 +47,7 @@ const ExperienceCard = ({ experience }: Props) => {
             <h3 className='text-xs font-light md:text-2xl'>{experience.jobTitle}</h3>
             <p className='mt-1 text-base font-bold md:text-3xl'>{experience.company}</p>
             <p className='py-2 text-xs uppercase text-gray-300 md:py-3 xl:py-5'>
-              {new Date(experience.dateStarted).toDateString()} -{' '}
-              {experience.isCurrentlyWorkingHere ? 'Present' : new Date(experience.dateEnded).toDateString()}
+              {fmt(experience.dateStarted)} - {experience.isCurrentlyWorkingHere ? 'Present' : fmt(experience.dateEnded)}
             </p>
           </div>
         </div>

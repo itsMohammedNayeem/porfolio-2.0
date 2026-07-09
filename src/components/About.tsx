@@ -11,7 +11,7 @@ const About = ({ pageInfo }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className='relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-center px-10 text-center md:flex-row md:justify-evenly md:text-left'>
+      className='relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-start px-10 pt-32 text-center md:flex-row md:justify-evenly md:pt-0 md:text-left'>
       <h2 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>About</h2>
 
       <motion.img
