@@ -32,6 +32,31 @@ npm run lint       # ESLint — must pass
 5. **Content source of truth:** `MohammedNayeem_SeniorReactDeveloper_ClaudeCreated.docx` (the old-version DOCX is reference only). Never invent roles, dates, or metrics.
 6. Git identity for this repo: personal email (`nayeem.gmit@gmail.com`), not the WPP one — set via repo-local `git config`.
 
+## CSS architecture & design tokens
+
+Tailwind v4, CSS-first. All theme values live in the `@theme` block in
+`src/index.css` (colors, fonts, and the fluid tokens below). Reusable
+multi-property patterns are `@utility` classes in the same file.
+
+**Design tokens** (fluid via `clamp()` — scale smoothly 320px→desktop; both
+endpoints match the historical fixed values so desktop is unchanged):
+
+| Token | Purpose | Range (mobile → desktop) |
+|-------|---------|--------------------------|
+| `--text-label` | section marker font-size | 18px → 24px |
+| `--tracking-label` | section marker letter-spacing | 6.4px → 20px |
+| `--spacing-gutter` | section horizontal padding (`px-gutter`) | 24px → 40px |
+
+**Utilities** (`@utility` in `index.css`): `heroButton` (nav pills, 48px touch
+target on mobile), `contactInput` (form fields), `sectionLabel` (the unified
+`ABOUT / EXPERIENCE / …` markers — applies the label tokens above).
+
+**UI/UX constraints:** preserve the dark identity, radial hero, and typographic
+layout — polish, don't redesign. Interactive reveals must work on touch (no
+hover-only content). Respect `prefers-reduced-motion`. Keep touch targets large
+and section labels off the viewport edges via the fluid tokens.
+
 ## Roadmap
 
-See `ANALYSIS.md` §4 for the PR-by-PR roadmap and merge order.
+See `ANALYSIS.md` §4 for the engineering roadmap and `DESIGN_AUDIT.md` for the
+UX/design roadmap (Steps 2–5) and merge order.
