@@ -1,3 +1,4 @@
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
 import { motion } from 'motion/react'
 import { SocialIcon } from 'react-social-icons'
 
@@ -45,15 +46,12 @@ const Header = ({ socials }: Props) => {
         className='flex flex-row items-center gap-3 md:gap-4'>
         <ResumeDownload />
 
-        <a href='#contact' className='flex flex-row items-center'>
-          <SocialIcon
-            network='email'
-            fgColor='currentColor'
-            bgColor='transparent'
-            className='text-gray-500 transition duration-200 hover:text-sun motion-safe:hover:scale-110'
-            url=''
-          />
-          <p className='hidden cursor-pointer text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</p>
+        <a
+          href='#contact'
+          aria-label='Get in touch'
+          className='flex flex-row items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 hover:text-sun'>
+          <EnvelopeIcon className='h-6 w-6 transition-transform duration-200 motion-safe:hover:scale-110' />
+          <span className='hidden text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</span>
         </a>
       </motion.div>
     </header>

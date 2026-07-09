@@ -49,13 +49,26 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  /*
+    Consistent keyboard focus indicator for every interactive element — nav
+    pills, skill/experience buttons, social links, the résumé disclosure, form
+    fields, and the back-to-top control. :focus-visible keeps it keyboard-only
+    (no ring on mouse click), and modern browsers round the outline to the
+    element's border-radius.
+  */
+  :focus-visible {
+    outline: 2px solid var(--color-sun);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
 @utility heroButton {
   @apply inline-flex min-h-12 items-center justify-center rounded-full border border-gray-20 px-6 py-2 text-xs uppercase tracking-widest text-gray-500 transition duration-200 hover:border-sun hover:text-sun motion-safe:hover:-translate-y-0.5 md:min-h-0;
 }
 @utility contactInput {
-  @apply rounded-xs border-b border-gray-14 bg-slate-400/10 px-2 py-2 md:px-3 md:py-2 text-gray-500 placeholder-gray-500 outline-hidden transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
+  @apply rounded-xs border-b border-gray-14 bg-slate-400/10 px-2 py-2 md:px-3 md:py-2 text-gray-500 placeholder-gray-500 transition-all hover:border-sun/40 focus:border-sun/40 focus:text-sun/40;
 }
 
 /* Unified, fluid section marker (ABOUT / EXPERIENCE / SKILLS / …) */
