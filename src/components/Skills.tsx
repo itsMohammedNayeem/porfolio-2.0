@@ -14,9 +14,9 @@ const Skills = ({ skills }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className='relative mx-auto flex min-h-screen max-w-[2000px] flex-col items-center justify-center gap-8 px-4 py-24 text-center'>
+      className='relative mx-auto flex min-h-screen max-w-[2000px] flex-col items-center justify-center gap-8 px-gutter py-24 text-center'>
       <div className='flex flex-col items-center gap-2'>
-        <h2 className='text-2xl uppercase tracking-[10px] text-gray-500 sm:tracking-[20px]'>Skills</h2>
+        <h2 className='sectionLabel'>Skills</h2>
         <h3 className='text-sm uppercase tracking-[3px] text-gray-400'>Hover or tap a skill for proficiency</h3>
       </div>
 

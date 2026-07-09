@@ -27,7 +27,7 @@ const Projects = ({ projects }: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className='relative z-0 mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden text-left md:flex-row'>
-      <h2 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Projects</h2>
+      <h2 className='sectionLabel absolute top-20 md:top-24'>Projects</h2>
 
       <div
         ref={scrollRef}

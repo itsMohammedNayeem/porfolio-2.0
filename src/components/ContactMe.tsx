@@ -24,11 +24,11 @@ const ContactMe = ({ pageInfo }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className='relative z-0 mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left'>
-      <h2 className='absolute top-20 text-2xl uppercase tracking-[20px] text-gray-500 md:top-24'>Contact Me</h2>
+      className='relative z-0 mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-gutter text-center md:flex-row md:text-left'>
+      <h2 className='sectionLabel absolute top-20 md:top-24'>Contact Me</h2>
 
       <div className='flex flex-col space-y-5'>
-        <h3 className='text-balance text-center font-semibold'>
+        <h3 className='text-balance text-center text-xl font-semibold md:text-3xl'>
           I have got just the right skills to help you with your project.{' '}
           <span className='underline decoration-sun/50 underline-offset-4'>Let&apos;s talk!</span>
         </h3>
