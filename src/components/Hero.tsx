@@ -31,7 +31,7 @@ const Hero = ({ pageInfo }: Props) => {
           {pageInfo?.role}
         </p>
 
-        <h1 className='flex min-h-24 items-center justify-center py-6 text-2xl font-semibold text-white md:min-h-20 md:text-5xl lg:text-6xl'>
+        <h1 className='my-4 flex min-h-[2lh] items-center justify-center text-2xl font-semibold text-white md:text-5xl lg:min-h-[1lh] lg:text-6xl'>
           <span className='mr-3 font-mono'>{text}</span>
           <Cursor cursorColor='#D92815' />
         </h1>
