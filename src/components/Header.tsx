@@ -50,7 +50,7 @@ const Header = ({ socials }: Props) => {
           href='#contact'
           aria-label='Get in touch'
           className='flex flex-row items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 hover:text-sun'>
-          <EnvelopeIcon className='h-6 w-6 transition-transform duration-200 motion-safe:hover:scale-110' />
+          <EnvelopeIcon className='h-8 w-8 transition-transform duration-200 motion-safe:hover:scale-110 sm:h-9 sm:w-9' />
           <span className='hidden text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</span>
         </a>
       </motion.div>
