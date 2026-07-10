@@ -1,4 +1,3 @@
-import { EnvelopeIcon } from '@heroicons/react/24/solid'
 import { motion } from 'motion/react'
 import { SocialIcon } from 'react-social-icons'
 
@@ -46,13 +45,24 @@ const Header = ({ socials }: Props) => {
         className='flex flex-row items-center gap-3 md:gap-4'>
         <ResumeDownload />
 
-        <a
-          href='#contact'
-          aria-label='Get in touch'
-          className='flex flex-row items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 hover:text-sun'>
-          <EnvelopeIcon className='h-8 w-8 transition-transform duration-200 motion-safe:hover:scale-110 sm:h-9 sm:w-9' />
-          <span className='hidden text-sm uppercase text-gray-400 md:inline-flex'>Get in touch</span>
-        </a>
+        {/* Same react-social-icons component as the left row, so it renders
+            identically. The label is a separate sibling link (not a wrapper)
+            to keep it a single, valid anchor. */}
+        <div className='flex flex-row items-center'>
+          <SocialIcon
+            network='email'
+            url='#contact'
+            fgColor='currentColor'
+            bgColor='transparent'
+            aria-label='Get in touch'
+            className='text-gray-500 transition duration-200 hover:text-sun motion-safe:hover:scale-110'
+          />
+          <a
+            href='#contact'
+            className='hidden text-sm uppercase text-gray-400 transition-colors duration-200 hover:text-sun md:inline-flex'>
+            Get in touch
+          </a>
+        </div>
       </motion.div>
     </header>
   )
