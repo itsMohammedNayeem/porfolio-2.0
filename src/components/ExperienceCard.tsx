@@ -1,5 +1,4 @@
 import { motion } from 'motion/react'
-import { useState } from 'react'
 
 import { imageSrc } from '../lib/sanity'
 import type { Experience } from '../types'
@@ -9,67 +8,68 @@ type Props = { experience: Experience }
 const fmt = (date: string) => new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 
 const ExperienceCard = ({ experience }: Props) => {
-  // Desktop reveals the card on hover; touch/keyboard toggle it on tap/Enter,
-  // since hover doesn't exist on touch devices (cards would stay dimmed).
-  const [active, setActive] = useState(false)
-
   return (
-    <article
-      onClick={() => setActive(a => !a)}
-      onKeyDown={e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          setActive(a => !a)
-        }
-      }}
-      tabIndex={0}
-      role='button'
-      aria-pressed={active}
-      aria-label={`${experience.jobTitle} at ${experience.company} — tap to highlight`}
-      className={`flex h-[510px] w-[320px] shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-gray-16 p-5 transition-opacity duration-200 focus-visible:opacity-100 md:w-[600px] xl:w-[900px] xl:p-10 ${active ? 'opacity-100' : 'opacity-40 hover:opacity-100'}`}>
-      <div className='px-0 md:px-10'>
-        <div className='flex flex-row items-center justify-center gap-2 md:gap-4'>
-          <motion.img
-            initial={{
-              y: -100,
-              opacity: 0
-            }}
-            transition={{ duration: 1.2 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            src={imageSrc(experience.companyImage, 300)}
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+      className='relative flex h-[520px] w-[85vw] max-w-xl shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-gray-20 bg-gray-16 md:max-w-2xl'>
+      {/* sun accent bar */}
+      <span className='h-1 w-full shrink-0 bg-sun/80' />
+
+      <div className='flex min-h-0 flex-1 flex-col p-6 md:p-8'>
+        {/* header */}
+        <header className='flex items-center gap-4 border-b border-gray-20 pb-5'>
+          <img
+            src={imageSrc(experience.companyImage, 200)}
             alt={experience.company}
             loading='lazy'
             decoding='async'
-            className='h-20 w-20 rounded-full object-cover object-center md:h-32 md:w-32 xl:h-[150px] xl:w-[150px]'
+            className='h-16 w-16 shrink-0 rounded-full object-cover object-center md:h-20 md:w-20'
           />
-          <div>
-            <h3 className='text-xs font-light md:text-2xl'>{experience.jobTitle}</h3>
-            <p className='mt-1 text-base font-bold md:text-3xl'>{experience.company}</p>
-            <p className='py-2 text-xs uppercase text-gray-300 md:py-3 xl:py-5'>
-              {fmt(experience.dateStarted)} - {experience.isCurrentlyWorkingHere ? 'Present' : fmt(experience.dateEnded)}
+          <div className='min-w-0'>
+            <h3 className='text-lg font-bold leading-tight md:text-2xl'>{experience.jobTitle}</h3>
+            <p className='font-semibold text-sun md:text-lg'>{experience.company}</p>
+            <p className='mt-1.5 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wider text-gray-400'>
+              <span>
+                {fmt(experience.dateStarted)} – {experience.isCurrentlyWorkingHere ? 'Present' : fmt(experience.dateEnded)}
+              </span>
+              {experience.isCurrentlyWorkingHere && (
+                <span className='rounded-full bg-sun/15 px-2 py-0.5 font-semibold text-sun'>Current</span>
+              )}
             </p>
           </div>
-        </div>
+        </header>
 
-        <div className='my-2 flex flex-wrap gap-y-2 space-x-1 md:my-3 md:space-x-2'>
-          {experience.technologies.map(technology => (
-            <img
-              key={technology._id}
-              className='h-4 w-4 rounded-full object-cover md:h-8 md:w-8'
-              src={imageSrc(technology.image, 64)}
-              alt={technology.title}
-              loading='lazy'
-              decoding='async'
-            />
+        {/* technologies */}
+        {experience.technologies?.length > 0 && (
+          <div className='flex flex-wrap gap-2 py-4'>
+            {experience.technologies.map(technology => (
+              <img
+                key={technology._id}
+                src={imageSrc(technology.image, 64)}
+                alt={technology.title}
+                title={technology.title}
+                loading='lazy'
+                decoding='async'
+                className='h-7 w-7 rounded-full object-cover'
+              />
+            ))}
+          </div>
+        )}
+
+        {/* highlights */}
+        <ul className='min-h-0 flex-1 space-y-3 overflow-y-auto pr-2 text-sm leading-relaxed text-gray-300 scrollbar-thin scrollbar-thumb-sun/60 md:text-base'>
+          {experience?.points?.map((point, i) => (
+            <li key={i} className='flex gap-3'>
+              <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sun' />
+              <span>{point}</span>
+            </li>
           ))}
-        </div>
-
-        <ul className='scrollbar-track-black ml-5 h-[320px] list-disc space-y-2 overflow-y-auto text-xs scrollbar-thin scrollbar-thumb-sun md:text-lg lg:space-y-4'>
-          {experience?.points?.map((point, i) => <li key={i}>{point}</li>)}
         </ul>
       </div>
-    </article>
+    </motion.article>
   )
 }
 
