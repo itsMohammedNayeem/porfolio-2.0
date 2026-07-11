@@ -36,9 +36,17 @@ const ResumeDownload = () => {
   return (
     <details ref={ref} className='group relative'>
       <summary
-        className='flex min-h-6 cursor-pointer list-none items-center gap-1.5 text-sm uppercase text-gray-400 transition-colors duration-200 hover:text-sun [&::-webkit-details-marker]:hidden'
+        className='flex cursor-pointer list-none items-center text-sm uppercase text-gray-400 transition-colors duration-200 hover:text-sun [&::-webkit-details-marker]:hidden'
         aria-label='Download résumé'>
-        <ArrowDownTrayIcon className='h-9 w-9 sm:h-11 sm:w-11' />
+        {/*
+          Match react-social-icons exactly: same 50px box (36px on mobile via
+          the shared `social-icon` CSS rule) and the same glyph-to-box ink
+          ratio — social glyphs paint ~50% of their box, this heroicon paints
+          ~82% of its svg, so 61% inner size ≈ identical visual glyph weight.
+        */}
+        <span className='social-icon flex h-[50px] w-[50px] shrink-0 items-center justify-center transition duration-200 motion-safe:hover:scale-110'>
+          <ArrowDownTrayIcon className='h-[61%] w-[61%]' />
+        </span>
         <span className='hidden md:inline'>Résumé</span>
       </summary>
 
